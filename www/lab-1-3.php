@@ -1,3 +1,4 @@
+<title> Янушевич Максим ПИ-322</title>
 <?php
   define('NUM_E', 2.71828);
   print ('Число е равно ' . NUM_E . '<br>');
