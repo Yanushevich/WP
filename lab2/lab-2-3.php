@@ -8,9 +8,12 @@
 
   $arr["rating"] = 100;
 
+  asort($arr);
+
   foreach($arr as $key => $value)
   {
      echo "$key = $value <br />";
   }
+
 
 ?>
