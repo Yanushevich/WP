@@ -8,7 +8,7 @@
 
   $arr["rating"] = 100;
 
-  ksort($arr);
+  sort($arr);
 
   foreach($arr as $key => $value)
   {
