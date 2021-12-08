@@ -30,5 +30,13 @@
     echo $rez[$i]." ";
   }
 
+  print ("<br>");
+  print ('$rez1=');
+  $rez1=array();
+  $rez1=array_unique($rez);
+  for ($i = 0; $i <= count($rez1)+1; $i++)
+  {
+    echo $rez1[$i]." ";
+  }
 
 ?>
