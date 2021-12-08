@@ -15,10 +15,12 @@
     print ($arr[$i] . ' ');
   }
 
-  $arr_rev=array_reverse($arr);
+  $arr=array_reverse($arr);
   print ('<p> Элементы массива в обратном порядке: ');
   for ($i = 0; $i <= $a; $i++) {
-    print ($arr_rev[$i] . ' ');
+    print ($arr[$i] . ' ');
   }
+
+
  
 ?>
