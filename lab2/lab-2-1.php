@@ -24,7 +24,7 @@
   $rez=array_merge($treug,$kvd);
 
   sort($rez);
-
+  unset($rez[0]);
   for ($i = 0; $i <= count($rez); $i++)
   {
     echo $rez[$i]." ";
