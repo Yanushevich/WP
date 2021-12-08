@@ -5,9 +5,12 @@
 	     "cname" => "Hoffman",
 	     "city" => "London",
 	     "snum" => 1001);
+
+  $arr["rating"] = 100;
+
   foreach($arr as $key => $value)
   {
      echo "$key = $value <br />";
   }
-  
+
 ?>
