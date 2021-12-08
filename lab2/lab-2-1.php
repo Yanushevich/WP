@@ -23,9 +23,12 @@
   $rez=array();
   $rez=array_merge($treug,$kvd);
 
+  sort($rez);
+
   for ($i = 0; $i <= count($rez); $i++)
   {
     echo $rez[$i]." ";
   }
+
 
 ?>
