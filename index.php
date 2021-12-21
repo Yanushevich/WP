@@ -6,6 +6,7 @@
    <tr>
     <th align="left">Лабораторная работа №1:</th>
     <th align="left">Лабораторная работа №2:</th>
+    <th align="left">Лабораторная работа №3:</th>
    </tr>
 
 <tr>
@@ -65,6 +66,33 @@
 <ul>
   <li><a href="lab2/lab-2-5.php">Задача 2-5</a></li>
   <li><a href="lab2/lab-2-6.php">Задача 2-6</a></li>
+</ul>
+
+</td>
+
+<td style="vertical-align:top">
+
+<p> Часть 1</p>
+
+<ul>
+  <li><a href="lab3/f1.html">Упражнение 3-1</a></li>
+  <li><a href="lab3/f2.php">Упражнение 3-2</a></li>
+  <li><a href="lab3/f3.php">Упражнение 3-3</a></li>
+  <li><a href="lab3/f4.php">Упражнение 3-4</a></li>
+  <li><a href="lab3/f5.php">Упражнение 3-5</a></li>
+  <li><a href="lab3/f6.php">Упражнение 3-6</a></li>
+  <li><a href="lab3/f7.php">Упражнение 3-7</a></li>
+
+</ul>
+
+<p> Самостоятельная работа </p>
+
+<ul>
+  <li><a href="lab3/s3-1.php">Задача 3-1</a></li>
+  <li><a href="lab3/s3-2.php">Задача 3-2</a></li>
+  <li><a href="lab3/s3-3.php">Задача 3-3</a></li>
+  <li><a href="lab3/s3-4.php">Задача 3-4</a></li>
+  <li><a href="lab3/s3-5.php">Задача 3-5</a></li>
 </ul>
 
 </td>
