@@ -88,7 +88,7 @@
 <p> Самостоятельная работа </p>
 
 <ul>
-  <li><a href="lab3/s3-1.php">Задача 3-1</a></li>
+  <li><a href="lab3/s3-1.html">Задача 3-1</a></li>
   <li><a href="lab3/s3-2.php">Задача 3-2</a></li>
   <li><a href="lab3/s3-3.php">Задача 3-3</a></li>
   <li><a href="lab3/s3-4.php">Задача 3-4</a></li>
