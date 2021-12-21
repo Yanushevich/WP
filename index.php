@@ -76,11 +76,11 @@
 
 <ul>
   <li><a href="lab3/f1.html">Упражнение 3-1</a></li>
-  <li><a href="lab3/f2.php">Упражнение 3-2</a></li>
-  <li><a href="lab3/f3.php">Упражнение 3-3</a></li>
-  <li><a href="lab3/f4.php">Упражнение 3-4</a></li>
-  <li><a href="lab3/f5.php">Упражнение 3-5</a></li>
-  <li><a href="lab3/f6.php">Упражнение 3-6</a></li>
+  <li><a href="lab3/f2.html">Упражнение 3-2</a></li>
+  <li><a href="lab3/f3.html">Упражнение 3-3</a></li>
+  <li><a href="lab3/f4.html">Упражнение 3-4</a></li>
+  <li><a href="lab3/f5.html">Упражнение 3-5</a></li>
+  <li><a href="lab3/f6.html">Упражнение 3-6</a></li>
   <li><a href="lab3/f7.php">Упражнение 3-7</a></li>
 
 </ul>
