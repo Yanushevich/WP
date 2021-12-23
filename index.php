@@ -93,6 +93,7 @@
   <li><a href="lab3/s3-3.php">Задача 3-3</a></li>
   <li><a href="lab3/s3-4.php">Задача 3-4</a></li>
   <li><a href="lab3/s3-5.php">Задача 3-5</a></li>
+  <li><a href="lab3/s3-6.html">Задача 3-6</a></li>
 </ul>
 
 </td>
