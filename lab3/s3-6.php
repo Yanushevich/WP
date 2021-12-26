@@ -4,15 +4,17 @@
 if (isset($_POST["f1"])) {
   $text1 = $_POST["text1"];
   $t1 = array();
-  $let = $_POST["letter"];
+  $let = iconv("utf-8", "cp1251", $_POST["letter"]);
   $letc = 0;
   echo '<h3> Вариант 3 </h3>';
   echo $text1;
+  $text1 = iconv("utf-8", "cp1251", $text1);
   echo '<br>';
   $t1 = explode (' ', $text1);
   foreach ($t1 as $str) {
-    if (mb_substr($str, 0, 1,"utf-8") == $let) { $letc++; }
+    if (substr($str, 0, 1) == $let) { $letc++; }
   }
+  $let = iconv("cp1251", "utf-8", $let);
   echo ('Число слов, начинающихся на букву ' . $let . ': ' . $letc . '<br>');
 }
 
@@ -26,29 +28,30 @@ if (isset($_POST["f2"])) {
   $t2 = explode(' ', $text2);
 
   foreach ($t2 as $str) {
-    if (iconv_strlen($str, "utf-8") == $count) { echo ($str . '<br>');}
+    if (iconv_strlen($str) == $count) { echo ($str . '<br>');}
   }
 } 
 
 if (isset($_POST["f3"])) {
   $text3 = $_POST["text3"];
-  $let1 = $_POST["let1"];
-  $let2 = $_POST["let2"];
+  $let1 = iconv("utf-8", "cp1251", $_POST["let1"]);
+  $let2 = iconv("utf-8", "cp1251", $_POST["let2"]);
   $t3 = array();
   echo '<h3> Вариант 11 </h3>';
   echo $text3;
+  $text3 = iconv("utf-8", "cp1251", $text3);
   echo '<br>';
-  $t3 = preg_split('//u', $text3, -1, PREG_SPLIT_NO_EMPTY);
+  $t3 = str_split($text3);
   foreach ($t3 as $i => $v) {
-    if (mb_substr($t3[$i], 0, 1,"utf-8") == $let1) {
-      if(mb_substr($t3[$i+1], 0, 1,"utf-8") == $let2) {
+    if (substr($t3[$i], 0, 1) == $let1) {
+      if(substr($t3[$i+1], 0, 1) == $let2) {
 	unset($t3[$i]);
       }
     }
   }
   echo ('Обработанный текст: ');
   for ($i = 0; $i < count($t3); $i++) {
-    echo $t3[$i];
+    echo iconv("cp1251", "utf-8", $t3[$i]);
   }
 
 }
