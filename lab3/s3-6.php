@@ -1,5 +1,5 @@
 <title> Янушевич Максим ПИ-322</title>
-
+<meta charset="utf-8">
 <?
 if (isset($_POST["f1"])) {
   $text1 = $_POST["text1"];
