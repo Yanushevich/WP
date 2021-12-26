@@ -23,10 +23,8 @@ while($row=mysqli_fetch_array($result)){// для каждой строки из
  echo "<tr>";
  echo ("<td>" . iconv("cp1251", "utf-8", $row['user_name']) . "</td>");
  echo ("<td>" . iconv("cp1251", "utf-8", $row['user_e_mail']) . "</td>");
- echo "<td><a href='edit.php?id=" . $row['id']
-. "'>Редактировать</a></td>"; // запуск скрипта для редактирования
- echo "<td><a href='delete.php?id=" . $row['id']
-. "'>Удалить</a></td>"; // запуск скрипта для удаления записи
+ echo "<td><a href='edit.php?id=" . $row['id_user']. "'>Редактировать</a></td>";
+ echo "<td><a href='delete.php?id=" . $row['id_user']. "'>Удалить</a></td>";
  echo "</tr>";
 }
 print "</table>";
