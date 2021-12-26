@@ -100,7 +100,9 @@
 </td>
 
 <td style="vertical-align:top">
-  <a href="bd_user/index.php">База данных</a>
+  <a href="bd_user/index.php">База данных (тренировочная)</a>
+<p> Самостоятельная работа </p>
+  <a href="bd_banks/index.php">База с данными банков</a>
 </td>
 
 </tr>
