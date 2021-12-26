@@ -21,8 +21,8 @@ $result=mysqli_query($conn,"SELECT id_user, user_name, user_e_mail
 FROM user"); // запрос на выборку сведений о пользователях
 while ($row=mysqli_fetch_array($result)){// для каждой строки из запроса
  echo "<tr>";
- echo "<td>" . iconv(mb_detect_encoding($row['user_name'], mb_detect_order(), true), "utf-8", $row['user_name']) . "</td>";
- echo "<td>" . iconv(mb_detect_encoding($row['user_e_mail'], mb_detect_order(), true), "utf-8", $row['user_e_mail']) . "</td>";
+ echo "<td>" . iconv(mb_detect_encoding($row['user_name'], "cp1251"), "utf-8", $row['user_name']) . "</td>";
+ echo "<td>" . iconv(mb_detect_encoding($row['user_e_mail'], "cp1251"), "utf-8", $row['user_e_mail']) . "</td>";
  echo "<td><a href='edit.php?id=" . $row['id']
 . "'>Редактировать</a></td>"; // запуск скрипта для редактирования
  echo "<td><a href='delete.php?id=" . $row['id']
