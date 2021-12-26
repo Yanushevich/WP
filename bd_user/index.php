@@ -3,11 +3,12 @@
 <head> <title> Сведения о пользователях сайта </title> </head>
 <body>
 <?php
- mysql_connect("localhost", "root") or die ("Невозможно
+
+ mysql_connect("eu-cdbr-west-02.cleardb.net", "b94b976f849e9f", "f60a7bfb") or die ("Невозможно
 подключиться к серверу"); // установление соединения с сервером
  mysql_query('SET NAMES cp1251'); // тип кодировки
  // подключение к базе данных:
- mysql_select_db("users") or die("Нет такой таблицы!");
+ mysql_select_db("heroku_60a6c74570f65ce") or die("Нет такой таблицы!");
 ?>
 
 <h2>Зарегистрированные пользователи:</h2>

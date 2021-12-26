@@ -1,9 +1,9 @@
 <?php
  // Подключение к базе данных:
- mysql_connect("localhost","root","") or die ("Невозможно
+ mysql_connect("eu-cdbr-west-02.cleardb.net", "b94b976f849e9f", "f60a7bfb") or die ("Невозможно
 подключиться к серверу");
  mysql_query('SET NAMES cp1251'); // Тип кодировки
- mysql_select_db("users") or die("Нет такой таблицы!");
+ mysql_select_db("heroku_60a6c74570f65ce") or die("Нет такой таблицы!");
  // Строка запроса на добавление записи в таблицу:
  $sql_add = "INSERT INTO user SET user_name='" . $_GET['name']
 ."', user_login='".$_GET['login']."', user_password='"
