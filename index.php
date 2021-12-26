@@ -7,6 +7,7 @@
     <th align="left">Лабораторная работа №1:</th>
     <th align="left">Лабораторная работа №2:</th>
     <th align="left">Лабораторная работа №3:</th>
+    <th align="left">Лабораторная работа №4:</th>
    </tr>
 
 <tr>
@@ -97,6 +98,11 @@
 </ul>
 
 </td>
+
+<td style="vertical-align:top">
+  <a href="bd_user/index.php">База данных</a>
+</td>
+
 </tr>
 
 </table>
