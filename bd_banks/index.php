@@ -68,7 +68,7 @@ $result=mysqli_query($conn,"SELECT banks.name as 'bank', vklad.id_vklad as 'id_v
 while($row=mysqli_fetch_array($result)){// для каждой строки из запроса
  echo "<tr>";
  echo ("<td>" . iconv("cp1251", "utf-8", $row['dep']) . ' (' . iconv("cp1251", "utf-8", $row['bank']) . ')' . "</td>");
- echo ("<td>" . date_format(date_create($row[data]), 'd-m-Y') . "</td>");
+ echo ("<td>" . date_format(date_create($row['data']), 'd-m-Y') . "</td>");
  echo ("<td>" . iconv("cp1251", "utf-8", $row['start']) . "</td>");
  echo "<td><a href='edit_vkl.php?id=" . $row['id_vklad']. "'>Редактировать</a></td>";
  echo "<td><a href='delete_vkl.php?id=" . $row['id_vklad']. "'>Удалить</a></td>";
