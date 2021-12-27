@@ -34,4 +34,51 @@ print("<P>Всего банков: $num_rows </p>");
 ?>
 <p> <a href="new.php"> Добавить банк </a>
 
+<h2>Программы депозитов:</h2>
+<table border="1">
+<tr> 
+ <th> Название </th> <th> Процент годовых </th> <th> Банк </th>
+ <th> Редактировать </th> <th> Уничтожить </th> </tr>
+<?php
+$result=mysqli_query($conn,"SELECT deposit.id_dep as 'id_dep', deposit.name as 'name', banks.name as 'bank_name', deposit.perc as 'perc'
+FROM deposit 
+LEFT JOIN banks ON (banks.id_bank = deposit.id_bank)"); // запрос на выборку сведений о пользователях
+while($row=mysqli_fetch_array($result)){// для каждой строки из запроса
+ echo "<tr>";
+ echo ("<td>" . iconv("cp1251", "utf-8", $row['name']) . "</td>");
+ echo ("<td>" . iconv("cp1251", "utf-8", $row['perc']) . "</td>");
+ echo ("<td>" . iconv("cp1251", "utf-8", $row['bank_name']) . "</td>");
+ echo "<td><a href='edit_dep.php?id=" . $row['id_dep']. "'>Редактировать</a></td>";
+ echo "<td><a href='delete_dep.php?id=" . $row['id_dep']. "'>Удалить</a></td>";
+ echo "</tr>";
+}
+print "</table>";
+$num_rows = mysqli_num_rows($result); // число записей в таблице БД
+print("<P>Всего программ: $num_rows </p>");
+?>
+<p> <a href="new_dep.php"> Добавить программу </a>
+
+<h2>Вклады:</h2>
+<table border="1">
+<tr> 
+ <th> Депозит </th> <th> Дата </th> <th> Стартовая сумма </th>
+ <th> Редактировать </th> <th> Уничтожить </th> </tr>
+<?php
+$result=mysqli_query($conn,"SELECT banks.name as 'bank', vklad.id_vklad as 'id_vklad', deposit.name as 'dep', vklad.data as 'data', vklad.start as 'start' FROM vklad LEFT JOIN deposit ON (vklad.id_dep = deposit.id_dep) LEFT JOIN banks ON (deposit.id_bank = banks.id_bank)"); 
+while($row=mysqli_fetch_array($result)){// для каждой строки из запроса
+ echo "<tr>";
+ echo ("<td>" . iconv("cp1251", "utf-8", $row['dep']) . ' (' . iconv("cp1251", "utf-8", $row['bank']) . ')' . "</td>");
+ echo ("<td>" . iconv("cp1251", "utf-8", $row['data']) . "</td>");
+ echo ("<td>" . iconv("cp1251", "utf-8", $row['start']) . "</td>");
+ echo "<td><a href='edit_vkl.php?id=" . $row['id_vklad']. "'>Редактировать</a></td>";
+ echo "<td><a href='delete_vkl.php?id=" . $row['id_vklad']. "'>Удалить</a></td>";
+ echo "</tr>";
+}
+print "</table>";
+$num_rows = mysqli_num_rows($result); // число записей в таблице БД
+print("<P>Всего вкладов: $num_rows </p>");
+?>
+<p> <a href="new_vkl.php"> Добавить вклад </a>
+
+
 </body> </html>
