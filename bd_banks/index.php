@@ -81,6 +81,6 @@ print("<P>Всего вкладов: $num_rows </p>");
 <p> <a href="new_vkl.php"> Добавить вклад </a>
 
 <p> <a href="inf_pdf.php"> Выгрузить данные в PDF </a>
-<p> <a href="inf_xls.php"> Выгрузить данные в Excel </a>
+<p> <a href="inf_xls.php" download> Выгрузить данные в Excel </a>
 
 </body> </html>
