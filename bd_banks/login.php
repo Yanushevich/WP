@@ -28,6 +28,6 @@ if (mysqli_affected_rows($conn)>0) {
  $_SESSION['type'] = $row['type'];
  echo '<script type="text/javascript">window.open("index.php","_self");</script>';
  exit;
-} else { echo "Неверный логин/пароль"; }
+} else { echo "<br>Неверный логин/пароль"; }
 }
 ?>

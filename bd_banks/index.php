@@ -93,6 +93,12 @@ print("<P>Всего вкладов: $num_rows </p>");
 <? if (isset($_POST['quit'])) {
     session_destroy();
     echo '<script type="text/javascript"> window.open("login.php","_self");</script>';
-}
+   }
+if ($_SESSION['type'] == 2) { echo '<p> <a href="new_user.php"> Создать пользователя </a>'; }
+if ($_SESSION['type'] == 2) { echo '<p> <a href="edit_user.php"> Редактировать данные пользователя </a>'; }
+if ($_SESSION['type'] == 2) { echo '<p> <a href="delete_user.php"> Удалить пользователя </a>'; }
+if ($_SESSION['type'] == 1) { echo '<p> <a href="edit_oper.php"> Изменить свою учетную запись </a>'; }
+
 ?>
+
 </body> </html>
