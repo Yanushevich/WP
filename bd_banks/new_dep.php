@@ -1,3 +1,4 @@
+<? session_start(); include("check_log.php");?>
 <html>
 <head> <title> Добавление новой программы депозитов </title> </head>
 <body>

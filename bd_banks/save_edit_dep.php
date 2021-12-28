@@ -1,3 +1,4 @@
+<? session_start(); include("check_log.php");?>
 <html> <body>
 <?php
  $conn=mysqli_connect("eu-cdbr-west-02.cleardb.net", "b94b976f849e9f", "f60a7bfb") or die ("Невозможно

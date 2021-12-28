@@ -1,4 +1,4 @@
-<?php
+<? session_start(); include("check_log.php");
 require_once('tcpdf/tcpdf.php');
 function fetch_data()
 {

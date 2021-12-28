@@ -1,3 +1,4 @@
+<? session_start(); include("check_log.php");?>
 <html>
 <head> <title> Добавление нового банка </title> </head>
 <body>
