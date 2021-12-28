@@ -8,6 +8,7 @@
     <th align="left">Лабораторная работа №2:</th>
     <th align="left">Лабораторная работа №3:</th>
     <th align="left">Лабораторная работа №4:</th>
+    <th align="left">Лабораторная работа №5:</th>
    </tr>
 
 <tr>
@@ -101,6 +102,9 @@
 
 <td style="vertical-align:top">
   <a href="bd_user/index.php">База данных (тренировочная)</a>
+</td>
+
+<td style="vertical-align:top">
 <p> Самостоятельная работа </p>
   <a href="bd_banks/login.php">База с данными банков</a>
 </td>
