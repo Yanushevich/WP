@@ -1,9 +1,10 @@
+<? session_start() ?>
 <html>
 <meta charset="utf-8">
 <head> <title> Сведения о банках </title> </head>
 <body>
-<?php
-
+<?
+include("check_log.php");
 $conn=mysqli_connect("eu-cdbr-west-02.cleardb.net", "b94b976f849e9f", "f60a7bfb") or die ("Невозможно
 подключиться к серверу"); // установление соединения с сервером
  mysqli_query($conn,'SET NAMES cp1251'); // тип кодировки
@@ -15,7 +16,9 @@ $conn=mysqli_connect("eu-cdbr-west-02.cleardb.net", "b94b976f849e9f", "f60a7bfb"
 <table border="1">
 <tr> 
  <th> Наименование </th> <th> Страна </th> <th> Объем активов (в млн.дол.)</th>
- <th> Редактировать </th> <th> Уничтожить </th> </tr>
+ <th> Редактировать </th> 
+ <? if ($_SESSION['type'] == 2) { echo '<th> Уничтожить </th>';} ?> 
+ </tr>
 <?php
 $result=mysqli_query($conn,"SELECT id_bank, name, country, assets
 FROM banks"); // запрос на выборку сведений о пользователях
@@ -25,7 +28,7 @@ while($row=mysqli_fetch_array($result)){// для каждой строки из
  echo ("<td>" . iconv("cp1251", "utf-8", $row['country']) . "</td>");
  echo ("<td>" . iconv("cp1251", "utf-8", $row['assets']) . "</td>");
  echo "<td><a href='edit.php?id=" . $row['id_bank']. "'>Редактировать</a></td>";
- echo "<td><a href='delete.php?id=" . $row['id_bank']. "'>Удалить</a></td>";
+ if ($_SESSION['type'] == 2) { echo "<td><a href='delete.php?id=" . $row['id_bank']. "'>Удалить</a></td>"; }
  echo "</tr>";
 }
 print "</table>";
@@ -38,7 +41,9 @@ print("<P>Всего банков: $num_rows </p>");
 <table border="1">
 <tr> 
  <th> Название </th> <th> Процент годовых </th> <th> Банк </th>
- <th> Редактировать </th> <th> Уничтожить </th> </tr>
+ <th> Редактировать </th> 
+ <? if ($_SESSION['type'] == 2) { echo '<th> Уничтожить </th>';} ?> 
+ </tr>
 <?php
 $result=mysqli_query($conn,"SELECT deposit.id_dep as 'id_dep', deposit.name as 'name', banks.name as 'bank_name', deposit.perc as 'perc'
 FROM deposit 
@@ -49,7 +54,7 @@ while($row=mysqli_fetch_array($result)){// для каждой строки из
  echo ("<td>" . iconv("cp1251", "utf-8", $row['perc']) . "</td>");
  echo ("<td>" . iconv("cp1251", "utf-8", $row['bank_name']) . "</td>");
  echo "<td><a href='edit_dep.php?id=" . $row['id_dep']. "'>Редактировать</a></td>";
- echo "<td><a href='delete_dep.php?id=" . $row['id_dep']. "'>Удалить</a></td>";
+ if ($_SESSION['type'] == 2) { echo "<td><a href='delete_dep.php?id=" . $row['id_dep']. "'>Удалить</a></td>"; } 
  echo "</tr>";
 }
 print "</table>";
@@ -62,7 +67,9 @@ print("<P>Всего программ: $num_rows </p>");
 <table border="1">
 <tr> 
  <th> Депозит </th> <th> Дата </th> <th> Стартовая сумма </th>
- <th> Редактировать </th> <th> Уничтожить </th> </tr>
+ <th> Редактировать </th>
+ <? if ($_SESSION['type'] == 2) { echo '<th> Уничтожить </th>';} ?>
+ </tr>
 <?php
 $result=mysqli_query($conn,"SELECT banks.name as 'bank', vklad.id_vklad as 'id_vklad', deposit.name as 'dep', vklad.data as 'data', vklad.start as 'start' FROM vklad LEFT JOIN deposit ON (vklad.id_dep = deposit.id_dep) LEFT JOIN banks ON (deposit.id_bank = banks.id_bank)"); 
 while($row=mysqli_fetch_array($result)){// для каждой строки из запроса
@@ -71,7 +78,7 @@ while($row=mysqli_fetch_array($result)){// для каждой строки из
  echo ("<td>" . date_format(date_create($row['data']), 'd-m-Y') . "</td>");
  echo ("<td>" . iconv("cp1251", "utf-8", $row['start']) . "</td>");
  echo "<td><a href='edit_vkl.php?id=" . $row['id_vklad']. "'>Редактировать</a></td>";
- echo "<td><a href='delete_vkl.php?id=" . $row['id_vklad']. "'>Удалить</a></td>";
+ if ($_SESSION['type'] == 2) { echo "<td><a href='delete_vkl.php?id=" . $row['id_vklad']. "'>Удалить</a></td>"; }
  echo "</tr>";
 }
 print "</table>";
@@ -79,8 +86,14 @@ $num_rows = mysqli_num_rows($result); // число записей в табли
 print("<P>Всего вкладов: $num_rows </p>");
 ?>
 <p> <a href="new_vkl.php"> Добавить вклад </a>
-
 <p> <a href="inf_pdf.php"> Выгрузить данные в PDF </a>
 <p> <a href="inf_xls.php"> Выгрузить данные в Excel </a>
-
+<form method="post" action="<? print $PHP_SELF ?>">
+<input type="submit" name="quit" value="Выход">
+</form>
+<? if (isset($_POST['quit'])) {
+    session_destroy();
+    echo '<script type="text/javascript"> window.open("login.php","_self");</script>';
+}
+?>
 </body> </html>
