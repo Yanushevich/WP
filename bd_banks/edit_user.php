@@ -30,8 +30,8 @@ if (iconv("cp1251", "utf-8", $st['type']) == 1) { echo 'Оператор</option
 elseif (iconv("cp1251", "utf-8", $st['type']) == 2) { echo 'Администратор</option>'; }
 }
 echo '</select>';
-echo "<br>Имя пользователя: <input name='username' size='20' value='".$username."' type='text'>";
-echo "<br>Пароль: <input name='password' size='20' maxlength='32' value='".$password."' type='text'>";
+echo "<br>Имя пользователя: <input name='username' size='20' type='text'>";
+echo "<br>Пароль: <input name='password' size='20' maxlength='32' type='text'>";
 ?>
 
 <br>Тип: <select name='type'>
