@@ -105,7 +105,6 @@
 </td>
 
 <td style="vertical-align:top">
-<p> Самостоятельная работа </p>
   <a href="bd_banks/login.php">База с данными банков</a>
 </td>
 
