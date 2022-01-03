@@ -101,12 +101,15 @@
 </td>
 
 <td style="vertical-align:top">
-  <a href="bd_user/index.php">База данных (тренировочная)</a>4
-  <a href="bd_banks/login.php">База с данными банков</a>
+<ul>
+  <li><a href="bd_user/index.php">База данных (тренировочная)</a></li>
+  <li><a href="bd_banks/login.php">База с данными банков</a></li>
 </td>
 
 <td style="vertical-align:top">
-  <a href="bd_banks/login.php">База с данными банков</a>
+<ul>
+  <li><a href="bd_banks/login.php">База с данными банков</a></li>
+</ul>
 </td>
 
 </tr>
