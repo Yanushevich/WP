@@ -11,7 +11,7 @@
  mysqli_query($conn,'SET NAMES cp1251'); // тип кодировки
  // подключение к базе данных:
  mysqli_select_db($conn,"heroku_60a6c74570f65ce") or die ("Нет такой таблицы!");
-$rows=mysqli_query($conn, "SELECT banks.name as 'bank', vklad.id_vklad as 'id_vklad', vklad.data as 'data', vklad.start as 'start', deposit.name as 'dep' FROM vklad LEFT JOIN deposit ON (deposit.id_dep=vklad.id_dep) LEFT JOIN banks ON (deposit.id_bank=banks.id_bank) WHERE id_vklad='".$_GET['id']."' ");
+$rows=mysqli_query($conn, "SELECT banks.name as 'bank', vklad.id_vklad as 'id_vklad', vklad.data as 'data', vklad.start as 'start', deposit.name as 'dep' FROM vklad LEFT JOIN deposit ON (deposit.id_dep=vklad.id_dep) LEFT JOIN banks ON (deposit.id_bank=banks.id_bank) WHERE id_vklad='".$_GET['id']."'");
  while ($st=mysqli_fetch_array($rows)) {
  $id = $st['id_vklad'];
  $data = $st['data'];
@@ -24,10 +24,16 @@ print "Стартовая сумма: <input name='start' size='20' type='text'
 value='".$start."'>";
 print "<br>Дата: <input name='data' size='20' type='date'
 value='".$data."'>";
-print "<br>Программа депозита: <input name='bank' disabled size='20' type='text'
-value='".$dep . ' - ' .$bank."'>";
 print "<input type='hidden' name='id' 
 value='".$id."'>";
+print "<br>Программа депозита:";
+echo '<select name="d">
+<option>...</option>';
+$result=mysqli_query($conn,"SELECT deposit.id_dep as 'id_dep', deposit.name as 'name', banks.name as 'bank' FROM deposit LEFT JOIN banks ON (banks.id_bank = deposit.id_bank)");
+while ($st2=mysqli_fetch_array($result)) {
+ echo  '<option value='.$st2['id_dep'].'>'.iconv("cp1251", "utf-8", $st2['name']).' - '.iconv("cp1251", "utf-8", $st2['bank']).'</option>';
+ }
+echo '</select>';
 print "<br><input type='submit' name='' value='Сохранить'>";
 print "</form>";
 print "<p><a href=\"index.php\"> Вернуться к списку
