@@ -57,7 +57,7 @@ if (isset($_POST["f3"])) {
 }
 
 if (isset($_POST["f4"])) {
-$string=$_POST['text4'];
+$string=iconv("utf-8","cp1251",$_POST['text4']);
 $upper=$lower=0;
 foreach(preg_split('//u', $string, -1, PREG_SPLIT_NO_EMPTY) as $c){
 if($c==mb_strtoupper($c, 'utf-8')){
