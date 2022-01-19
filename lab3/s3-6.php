@@ -56,30 +56,4 @@ if (isset($_POST["f3"])) {
 
 }
 
-if (isset($_POST["f4"])) {
-$string=iconv("utf-8","cp1251",$_POST['text4']);
-$upper=$lower=0;
-foreach(preg_split('//u', $string, -1, PREG_SPLIT_NO_EMPTY) as $c){
-if($c==mb_strtoupper($c, 'utf-8')){
-++$upper;
-}else{
-++$lower;
-}
-}
-
-if ($upper>$lower){
-$string=mb_strtoupper($string, 'utf-8');
-//$string= mb_convert_case($string, MB_CASE_UPPER);
-echo iconv("cp1251", "utf-8", $string);
-}
-elseif ($upper<$lower)
-{
-$string=mb_strtolower($string, 'utf-8');
-//$string= mb_convert_case($string, MB_CASE_LOWER);
-echo iconv("cp1251", "utf-8", $string);
-}
-elseif ($upper==$lower)
-echo iconv("cp1251", "utf-8", $string);
-}
-
 ?>
