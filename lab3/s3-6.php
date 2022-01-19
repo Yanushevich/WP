@@ -70,16 +70,16 @@ if($c==mb_strtoupper($c, 'utf-8')){
 if ($upper>$lower){
 $string=mb_strtoupper($string, 'utf-8');
 //$string= mb_convert_case($string, MB_CASE_UPPER);
-echo $string;
+echo iconv("cp1251", "utf-8", $string);
 }
 elseif ($upper<$lower)
 {
 $string=mb_strtolower($string, 'utf-8');
 //$string= mb_convert_case($string, MB_CASE_LOWER);
-echo $string;
+echo iconv("cp1251", "utf-8", $string);
 }
 elseif ($upper==$lower)
-echo $string;
+echo iconv("cp1251", "utf-8", $string);
 }
 
 ?>
